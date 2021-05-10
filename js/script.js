@@ -35,13 +35,17 @@ var studenti = [
 
 // Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
 // Dare la possibilità all'utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell'ordine: nome, cognome e età.
+do {    
+   var nome = prompt("Inserisci il tuo nome");
+   var cognome = prompt("Inserisci il tuo cognome");
+   var eta = parseInt(prompt("Inserisci la tua età")); 
+} while(!isNaN(nome)  || !isNaN(cognome) || isNaN(eta));
 
+var studenteNuovo = {};
 
-var studenteNuovo = {
-    nome:prompt("Inserisci il tuo nome"),
-    cognome:prompt("Inserisci il tuo cognome"),
-    eta:parseInt(prompt("Inserisci la tua età"))
-}
+studenteNuovo.nome = nome;
+studenteNuovo.cognome = cognome;
+studenteNuovo.eta = eta;
 
 studenti.push(studenteNuovo);
 
@@ -49,5 +53,4 @@ for (var i = 0; i< studenti.length; i++){
     console.log("Nome studente",studenti[i].nome);
     console.log("Cognome studente",studenti[i].cognome);
 }
-
 
